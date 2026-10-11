@@ -5,6 +5,7 @@ pipeline {
     
     environment {
         // Update the main app image name to match the deployment file
+        DOCKER_HUB_USERNAME = 'bhushandugawli'
         DOCKER_IMAGE_NAME = 'bhushandurgawli/easyshop-app'
         DOCKER_MIGRATION_IMAGE_NAME = 'bhushandurgawli/easyshop-migration'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
