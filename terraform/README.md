@@ -135,11 +135,10 @@ enable_argocd         = true             # Install ArgoCD
 ```bash
 # Initialize Terraform working directory
 # This downloads provider plugins and sets up the backend
-terraform init -backend-config=backend.hcl
+terraform init -backend-config="backend.hcl"
 
 # Verify backend configuration
-terraform init -backend-config=backend.hcl -upgrade
-```
+terraform init -backend-config="backend.hcl" -upgrade```
 
 ### Step 5: Validate Configuration
 
