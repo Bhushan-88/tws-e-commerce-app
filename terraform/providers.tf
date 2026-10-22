@@ -51,7 +51,7 @@ locals {
   intra_subnets   = ["10.0.7.0/24", "10.0.8.0/24", "10.0.9.0/24"]
 
   tags = {
-    Project   = "devboard"
+    Project   = "e-commerce"
     ManagedBy = "terraform"
     Cluster   = var.cluster_name
   }
@@ -60,7 +60,7 @@ locals {
     intern = {
       principal_arn     = var.intern_iam_principal_arn
       type              = "STANDARD"
-      kubernetes_groups = ["devboard-interns"]
+      kubernetes_groups = ["e-commerce-interns"]
     }
   }
 }

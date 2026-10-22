@@ -1,5 +1,5 @@
 region             = "us-east-1"
-cluster_name       = "devboard"
+cluster_name       = "e-commerce"
 kubernetes_version = "1.34"
 
 node_instance_type = "c7i-flex.large"

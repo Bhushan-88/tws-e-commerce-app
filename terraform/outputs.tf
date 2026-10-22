@@ -82,6 +82,6 @@ output "set_postgres_secret" {
       --secret-id ${aws_secretsmanager_secret.postgres.name} \
       --region ${var.region} \
       --secret-string "$(jq -nc --arg p "$PGPASS" \
-          '{username:"devboard", password:$p, dbname:"devboard"}')"
+          '{username:"e-commerce", password:$p, dbname:"e-commerce"}')"
   EOT
 }

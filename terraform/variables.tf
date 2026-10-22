@@ -7,7 +7,7 @@ variable "region" {
 variable "cluster_name" {
   description = "EKS cluster name. Also used as the VPC name and as a prefix for IAM roles."
   type        = string
-  default     = "devboard"
+  default     = "e-commerce"
 }
 
 variable "kubernetes_version" {
@@ -23,7 +23,7 @@ variable "node_instance_type" {
 }
 
 variable "node_desired_size" {
-  description = "Nodes to run. 3 fits both DevBoard stacks plus Ollama plus observability. Drop to 2 to save ~$61/month, but then run only one DevBoard stack."
+  description = "Nodes to run. 3 fits both e-commerce stacks plus Ollama plus observability. Drop to 2 to save ~$61/month, but then run only one e-commerce stack."
   type        = number
   default     = 3
 }
@@ -67,12 +67,12 @@ variable "ec2_root_volume_size" {
 variable "postgres_secret_name" {
   description = "Secrets Manager secret holding the Postgres credentials. The ExternalSecret in k8s/ and the Helm chart must reference the same name."
   type        = string
-  default     = "devboard/postgres"
+  default     = "e-commerce/postgres"
 }
 
 variable "intern_iam_principal_arn" {
   description = <<-EOT
-    Optional IAM role/user ARN to map into the cluster as the "devboard-interns"
+    Optional IAM role/user ARN to map into the cluster as the "e-commerce-interns"
     group, which k8s/intern-role-binding.yml grants read-mostly access. Leave
     null to skip — the RBAC chapter still works without a second IAM identity,
     you just can't prove it end to end.

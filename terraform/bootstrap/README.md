@@ -33,7 +33,7 @@ cd ..
 terraform init -backend-config=backend.hcl
 ```
 
-The bucket name defaults to `devboard-tfstate-<account-id>-<region>`. S3 bucket
+The bucket name defaults to `e-commerce-tfstate-<account-id>-<region>`. S3 bucket
 names are globally unique across every AWS account, so it cannot be hardcoded
 in a repo people fork — deriving it from your account ID gives everyone a name
 that is unique without being a manual step.

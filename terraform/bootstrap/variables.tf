@@ -5,7 +5,7 @@ variable "region" {
 }
 
 variable "bucket_name" {
-  description = "Override the state bucket name. Leave null to derive devboard-tfstate-<account-id>-<region>, which is unique per account without being hardcoded in the repo."
+  description = "Override the state bucket name. Leave null to derive e-commerce-tfstate-<account-id>-<region>, which is unique per account without being hardcoded in the repo."
   type        = string
   default     = null
 }

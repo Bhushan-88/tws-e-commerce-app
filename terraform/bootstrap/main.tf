@@ -17,10 +17,10 @@ provider "aws" {
 data "aws_caller_identity" "current" {}
 
 locals {
-  bucket_name = coalesce(var.bucket_name, "devboard-tfstate-${data.aws_caller_identity.current.account_id}-${var.region}")
+  bucket_name = coalesce(var.bucket_name, "e-commerce-tfstate-${data.aws_caller_identity.current.account_id}-${var.region}")
 
   tags = {
-    Project   = "devboard"
+    Project   = "e-commerce"
     ManagedBy = "terraform"
     Layer     = "bootstrap"
   }

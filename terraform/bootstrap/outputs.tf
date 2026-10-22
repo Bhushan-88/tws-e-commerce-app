@@ -8,7 +8,7 @@ output "backend_hcl" {
 
   value = <<-EOT
     bucket = "${aws_s3_bucket.state.id}"
-    key    = "devboard/mega-project/terraform.tfstate"
+    key    = "e-commerce/mega-project/terraform.tfstate"
     region = "${var.region}"
 
     encrypt = true

@@ -118,7 +118,7 @@ cat terraform.tfvars
 
 ```hcl
 region                = "us-east-1"      # AWS region
-cluster_name          = "devboard"       # EKS cluster name
+cluster_name          = "e-commerce"       # EKS cluster name
 kubernetes_version    = "1.34"           # EKS version
 node_instance_type    = "c7i-flex.large" # Worker node type
 node_desired_size     = 3                # Number of worker nodes
@@ -126,7 +126,7 @@ node_min_size         = 2                # Minimum nodes for auto-scaling
 node_max_size         = 3                # Maximum nodes for auto-scaling
 node_disk_size        = 30               # Root volume size in GiB
 ec2_instance_type     = "t3.micro"       # Jenkins EC2 instance type
-postgres_secret_name  = "devboard/postgres" # Secrets Manager secret name
+postgres_secret_name  = "e-commerce/postgres" # Secrets Manager secret name
 enable_argocd         = true             # Install ArgoCD
 ```
 
@@ -194,7 +194,7 @@ git add terraform.tfstate terraform.tfstate.backup 2>/dev/null || true
 # Update kubeconfig to connect to the new cluster
 aws eks update-kubeconfig \
   --region us-east-1 \
-  --name devboard
+  --name e-commerce
 
 # Verify cluster access
 kubectl cluster-info
@@ -270,7 +270,7 @@ VPC (10.0.0.0/16)
 terraform force-unlock <LOCK_ID>
 
 # View lock information
-aws s3api head-object --bucket your-bucket --key devboard/terraform.tfstate
+aws s3api head-object --bucket your-bucket --key e-commerce/terraform.tfstate
 ```
 
 #### 2. EC2 Key Pair Issues
@@ -285,22 +285,22 @@ ssh-keygen -t rsa -b 4096 -f terraform/terra-automate-key
 #### 3. EKS Cluster Not Accessible
 ```bash
 # Verify security group rules
-aws ec2 describe-security-groups --filters "Name=group-name,Values=*devboard*"
+aws ec2 describe-security-groups --filters "Name=group-name,Values=*e-commerce*"
 
 # Check cluster endpoint
-aws eks describe-cluster --name devboard --query 'cluster.endpoint'
+aws eks describe-cluster --name e-commerce --query 'cluster.endpoint'
 
 # Update kubeconfig
-aws eks update-kubeconfig --name devboard --region us-east-1 --force
+aws eks update-kubeconfig --name e-commerce --region us-east-1 --force
 ```
 
 #### 4. Node Group Creation Fails
 ```bash
 # Check node group events
-aws eks describe-nodegroup --cluster-name devboard --nodegroup-name default
+aws eks describe-nodegroup --cluster-name e-commerce --nodegroup-name default
 
 # Verify IAM role permissions
-aws iam get-role --role-name devboard-eks-ManagedNodeGroup-Default
+aws iam get-role --role-name e-commerce-eks-ManagedNodeGroup-Default
 ```
 
 ## Cost Management

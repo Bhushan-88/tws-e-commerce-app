@@ -1,5 +1,5 @@
-bucket = "devboard-tfstate-614332045493-us-east-1"
-key    = "devboard/mega-project/terraform.tfstate"
+bucket = "e-commerce-tfstate-614332045493-us-east-1"
+key    = "e-commerce/mega-project/terraform.tfstate"
 region = "us-east-1"
 
 encrypt = true

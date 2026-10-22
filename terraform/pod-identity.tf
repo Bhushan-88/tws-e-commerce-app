@@ -29,7 +29,7 @@ module "external_secrets_pod_identity" {
   external_secrets_ssm_parameter_arns = []
 
   external_secrets_secrets_manager_arns = [
-    "arn:aws:secretsmanager:${var.region}:${local.account_id}:secret:devboard/*",
+    "arn:aws:secretsmanager:${var.region}:${local.account_id}:secret:e-commerce/*",
   ]
 
   associations = {
