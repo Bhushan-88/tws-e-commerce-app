@@ -10,6 +10,7 @@ pipeline {
         DOCKER_MIGRATION_IMAGE_NAME = 'bhushandurgawli/easyshop-migration'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
         GITHUB_CREDENTIALS = credentials('github-credentials')
+        GIT_REPO = "https://github.com/Bhushan-88/tws-e-commerce-app.git"
         GIT_BRANCH = "master"
     }
     
@@ -25,7 +26,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    clone("https://github.com/Bhushan-88/tws-e-commerce-app.git","master")
+                    clone(env.GIT_REPO,env.GIT_BRANCH)
                 }
             }
         }
