@@ -55,7 +55,7 @@ variable "ec2_instance_type" {
 variable "ec2_key_name" {
   description = "AWS EC2 key pair name Terraform creates by importing terraform/terra-automate-key.pub."
   type        = string
-  default     = "terra-automate-key"
+  default     = "terra-key"
 }
 
 variable "ec2_root_volume_size" {

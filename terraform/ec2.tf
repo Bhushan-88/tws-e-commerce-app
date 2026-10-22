@@ -20,7 +20,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_key_pair" "jenkins" {
   key_name   = var.ec2_key_name
-  public_key = file("${path.module}/terra-automate-key.pub")
+  public_key = file("${path.module}/terra-key.pub")
 }
 
 resource "aws_security_group" "ec2" {
