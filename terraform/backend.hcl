@@ -1,0 +1,8 @@
+bucket = "devboard-tfstate-614332045493-us-east-1"
+key    = "devboard/mega-project/terraform.tfstate"
+region = "us-east-1"
+
+encrypt = true
+
+# S3-native state locking, GA since Terraform 1.11. Replaced the DynamoDB lock table.
+use_lockfile = true
