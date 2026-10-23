@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - easyshop.letsdeployit.com
+    - ae3c5be532c1d4b8eb4f0b47e98b551a-1981206171.us-east-1.elb.amazonaws.com
     secretName: easyshop-tls-secret  # Cert-Manager will manage this
   rules:
-  - host: easyshop.letsdeployit.com
+  - host: ae3c5be532c1d4b8eb4f0b47e98b551a-1981206171.us-east-1.elb.amazonaws.com
     http:
       paths:
       - path: /
